@@ -1,8 +1,5 @@
 <div class="d-flex w-100 h-100 justify-content-center align-items-center flex-column">
     <div class="d-flex my-3 ">
-        <!-- <div class="d-flex justify-content-center align-items-center ml-4">
-            <h5>Back to home page</h5>
-        </div>  -->
         <button color="primary" mat-raised-button (click)="navigateHome()">Home</button>
     </div>
     <div>
@@ -24,7 +21,7 @@
             <mat-form-field appearance="outline" class="mr-3">
                 <mat-form-field>
                     <input matInput class="date-time-input" placeholder="HH :/ MM" [ngxTimepicker]="picker2"
-                        [format]="24" [(ngModel)]="hoursRoporting.begingingTime">
+                        [format]="24" [(ngModel)]="hoursRoporting.begingingTime" [formControl]="begingingTime">
                     <ngx-material-timepicker #picker2></ngx-material-timepicker>
                 </mat-form-field>
                 <mat-error *ngIf="!begingingTime.valid">
