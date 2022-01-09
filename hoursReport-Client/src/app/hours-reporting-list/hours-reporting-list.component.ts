@@ -6,6 +6,7 @@ import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-hours-reporting-list',
@@ -21,7 +22,9 @@ export class HoursReportingListComponent implements OnInit {
       {
         field: 'date',
         sortable: false,
-        // valueFormatter: ((param) => { return this.m_datePipe.transform(param.data.date, 'DD/MM/YYYY') ? +''})
+        cellRenderer: (param) => {
+          return moment(param.data.date).format('MM/DD/YYYY HH:mm')
+        }
       },
       {
         field: 'begingingTime',
