@@ -1,0 +1,12 @@
+<div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex   justify-content-center align-items-center my-4">
+        <button class="mx-4" color="primary" mat-raised-button (click)="exportExcel()">Excel</button>
+        <button color="primary" mat-raised-button (click)="navigateHome()">Home</button>
+
+    </div>
+    <div class="d-flex justify-content-center flex w-100">
+        <ag-grid-angular style=" height: 500px;" class="ag-theme-alpine w-75" [rowData]="rowData"
+            [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)">
+        </ag-grid-angular>
+    </div>
+</div>
